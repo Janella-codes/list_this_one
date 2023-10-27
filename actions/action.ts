@@ -7,10 +7,17 @@ export const addTodo = async (formData: FormData) => {
     
     const prisma = new PrismaClient();
     const name = formData.get('name');
-    await prisma.todo.create({
+    
+    try { 
+      
+      await prisma.todo.create({
       data: {
         name: name as string,
       },
     });
+  } catch (e) {
+
+  }
+
     revalidatePath("/todos")
   };
