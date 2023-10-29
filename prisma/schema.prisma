@@ -35,3 +35,10 @@ model todo {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  message   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

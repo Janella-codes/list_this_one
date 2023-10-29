@@ -11,19 +11,22 @@ export default async function TodosPage() {
 
     const todos = await prisma.todo.findMany();
 
-
+    const messages = await prisma.message.findMany();
+    const datetime = new Date();
 
     return (
       
         <main className='flex min-h-screen flex-col items-center w-full p-24'>
-            
+            <div className="container mx-auto flex items-start">
+        <SideNav messages={messages} id={0} createdAt={datetime} /> 
+
             <div>
       <UserButton afterSignOutUrl="/"/>
     </div>
     <h1 className='text-4xl font-bold'>Todos</h1>
           <TodosComponent todos={todos}/>
       
-  
+  </div>
          
         </main>
     );

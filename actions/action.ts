@@ -21,3 +21,22 @@ export const addTodo = async (formData: FormData) => {
 
     revalidatePath("/todos")
   };
+
+  export const send = async (formData: FormData) => {
+    
+    const prisma = new PrismaClient();
+    const message = formData.get('message');
+    
+    try { 
+      
+      await prisma.message.create({
+      data: {
+        message: message as string,
+      },
+    });
+  } catch (e) {
+
+  }
+
+    revalidatePath("/todos")
+  };
