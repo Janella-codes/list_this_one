@@ -36,7 +36,7 @@ export default function TodosComponent({
             });
             // input validation here
            await addTodo(formData);
-        }} className='flex flex-col w-[300px] m-16'>
+        }} className='flex flex-col w-20'>
                 <input 
                   type="text"
                   name="name"
@@ -48,7 +48,7 @@ export default function TodosComponent({
                 <Button/>
             </form>
 
-<ul className='list-disc'>
+<ul className='flex flex-col items-start gap-2 whitespace-nowrap'>
 {optimisticTodos.map((todo) => (
     <li key={todo.id}>
        

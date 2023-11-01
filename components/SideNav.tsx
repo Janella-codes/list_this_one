@@ -43,7 +43,7 @@ export function SideNav({
             });
 
             await send(formData);
-        }} className='flex flex-col w-[300px] m-16'>
+        }} className='flex right-5 flex-col w-[400px] m-12'>
                 <input 
                   type="text"
                   name="message"
@@ -52,9 +52,9 @@ export function SideNav({
                   required 
                 />
                 
-                <Button/>
+                <Button />
             </form>
-            <ul className='list-disc'>
+            <ul className='flex flex-col items-start gap-6 whitespace-nowrap m-10'>
 {optimisticMessages.map((message) => (
     <li key={message.id}>
         <p>{message.message}</p>

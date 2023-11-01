@@ -16,18 +16,43 @@ export default async function TodosPage() {
 
     return (
       
-        <main className='flex min-h-screen flex-col items-center w-full p-24'>
-            <div className="container mx-auto flex items-start">
-        <SideNav messages={messages} id={0} createdAt={datetime} /> 
+      <div className='container mx-auto flex'>
+    <nav className="sticky top-0 px-2 py-4">
+          <ul className="flex flex-col items-start gap-2 whitespace-nowrap">
+         <li>
+         <span className="flex items-center gap-4">
 
-            <div>
-      <UserButton afterSignOutUrl="/"/>
-    </div>
-    <h1 className='text-4xl font-bold'>Todos</h1>
-          <TodosComponent todos={todos}/>
-      
-  </div>
-         
-        </main>
+            <UserButton afterSignOutUrl="/" />
+            </span>
+          </li>
+          <li>
+         <span className="flex items-center gap-4">
+         <span className="text-lg md:inline">todos
+         <TodosComponent todos={todos}/>
+        </span>
+        </span> 
+          </li>
+         </ul>
+          </nav>
+        <div className="min-h-screen flex-grow border-x">
+          <nav className="sticky top-0 px-2 py-4">
+            <ul className="flex flex-col items-start gap-4 whitespace-nowrap">
+              <li>
+                <span className="flex items-right gap-4">
+                <span className="text-lg md:inline">
+                  <h1 className='text-4xl font-bold gap-8'>twit</h1>
+                    <SideNav messages={messages} id={0} createdAt={datetime} /> 
+                </span>
+                </span>
+              </li>
+            </ul>
+          </nav>
+      </div>
+</div> 
+
+
     );
 };
+
+
+
