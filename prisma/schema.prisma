@@ -42,11 +42,3 @@ model Message {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
-
-model Todo {
-  id        String   @id @default(uuid())
-  title     String
-  complete  Boolean
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
